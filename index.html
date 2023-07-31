@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>Alternatives to JSON: YAML/TOML/... and why</section>
+        <section>
+          <section>
+            <h2>JSON</h2>
+            <p class="fragment">JSON stands for JavaScript Object Notation</p>
+            <p class="fragment">
+              JSON is a lightweight format for storing and transporting data
+            </p>
+            <p class="fragment">
+              JSON is often used when data is sent from a server to a web page
+            </p>
+            <p class="fragment">
+              JSON is "self-describing" and easy to understand
+            </p>
+          </section>
+          <section>
+            <h2>JSON Syntax Rules</h2>
+            <p class="fragment">Data is in name/value pairs</p>
+            <p class="fragment">Data is separated by commas</p>
+            <p class="fragment">Curly braces hold objects</p>
+            <p class="fragment">Square brackets hold arrays</p>
+          </section>
+          <section>
+            <pre><code>
+              {
+                "books": [
+                  {
+                    "id": "bk102",
+                    "author": "Crockford, Douglas",
+                    "title": "JavaScript: The Good Parts",
+                    "genre": "Computer",
+                    "price": 29.99,
+                    "publish_date": "2008-05-01",
+                    "description": "Unearthing the Excellence in JavaScript"
+                  }
+                ]
+              }
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>YAML</h2>
+            <p class="fragment">YAML Ain't Markup Language</p>
+            <p class="fragment">
+              YAML is a human friendly data serialization standard for all
+              programming languages.
+            </p>
+          </section>
+          <section>
+            <h2>YAML Syntax Rules</h2>
+            <pre><code>
+              ---
+              books:
+              - id: 'bk101'
+                author: 'Crockford, Douglas'
+                title: 'JavaScript: The Good Parts'
+                genre: 'Computer'
+                price: 29.99
+                publish_date: '2008-05-01T00:00:00+00:00'
+                description: 'Unearthing the Excellence in JavaScript'
+              ...
+            </code></pre>
+          </section>
+          <section>
+            <h2>JSON advantages compare to YAML</h2>
+            <p class="fragment">Easy to learn and adopt</p>
+            <p class="fragment">Fast and easy to validate</p>
+            <p class="fragment">Compact</p>
+            <p class="fragment">Secure</p>
+          </section>
+          <section>
+            <h2>YAML advantages compare to JSON</h2>
+            <p class="fragment">Handles a variety of tasks</p>
+            <p class="fragment">Works with multiple data types</p>
+            <p class="fragment">Allows comments</p>
+            <p class="fragment">Uses natural language</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>TOML</h2>
+            <p class="fragment">a minimal configuration file format</p>
+            <p class="fragment">
+              is designed to map unambiguously to a hash table
+            </p>
+            <p class="fragment">easy to parse into data structures</p>
+          </section>
+          <section>
+            <h2>TOML has useful native types</h2>
+            <p class="fragment">Key/Value Pairs</p>
+            <p class="fragment">Arrays</p>
+            <p class="fragment">Tables</p>
+            <p class="fragment">Inline tables</p>
+            <p class="fragment">Arrays of tables</p>
+            <p class="fragment">Integers & Floats</p>
+            <p class="fragment">Booleans</p>
+            <p class="fragment">Dates & Times, with optional offsets</p>
+          </section>
+          <section>
+            <pre><code>
+              [[books]]
+              id = 'bk101'
+              author = 'Crockford, Douglas'
+              title = 'JavaScript: The Good Parts'
+              genre = 'Computer'
+              price = 29.99
+              publish_date = 2008-05-01T00:00:00+00:00
+              description = 'Unearthing the Excellence in JavaScript'
+            </code></pre>
+          </section>
+          <section>
+            <h2>Arrays in TOML</h2>
+            <pre><code>
+              int_values = [1, 2, 4, 8, 16]
+              strings = ["prime", "audio", "soup"]
+              mixed = [1, 2, "Three", 4.0]
+              multi-line = [
+                  "array",
+                  "of",
+                  "strings"
+              ]
+            </code></pre>
+          </section>
+          <section>
+            <h2>Tables in TOML</h2>
+            <pre><code>
+              [general]
+              make_network_connection =true
+              ping_time = 1200
+              
+              [user]
+              default_name = "Anonymous"
+              ping_time = 1600
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <h2>Conclusion</h2>
+        </section>
+        <section>
+          <p>That's it!</p>
+          <p>Thank you for your attention!</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
